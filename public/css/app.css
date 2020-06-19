@@ -1,0 +1,22 @@
+body {
+  background-color: #222!important;
+}
+.side_menu {
+  text-align: center;
+}
+.control_labels {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.form_btn {
+  margin-top: 10px;
+}
+.img_input {
+  margin-top: 10px;
+}
+.req_fields {
+  color: #990000;
+  margin-left: 5px;
+  cursor: pointer;
+}
