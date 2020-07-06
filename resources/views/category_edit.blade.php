@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',' - About')
+@section('title',' - Category Edit')
 
 @section('content')
 <div class="container">
@@ -20,25 +20,17 @@
         <!-- To card tou home -->
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header back_card_header">{{ __('About') }}</div>
+                <div class="card-header back_card_header">{{ __('Category Edit') }}</div>
 
                 <div class="card-body">
-                  <form method="POST" action="{{ route('about.save') }}" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('categories.store') }}">
                     @csrf
                     <div class="form-group">
-                      <label for="about_contect" class="control_labels">Insert into the textarea below the contect of the "About" page:</label><label class="req_fields" title="Required Field">*</label>
-                      <textarea class="form-control" id="about_contect" name="about_contect" rows="6">{{$content}}</textarea>
+                      <label for="category_name" class="control_labels">Category Name</label><label class="req_fields" title="Required Field">*</label>
+                      <input type="text" class="form-control" id="category_name" name="category_name" value="{{$category->name}}">
+                      <input type="hidden" name="category_old_name" value="{{$category->name}}">
                     </div>
-                    <div class="form-group">
-                      <label for="about_img" class="control_labels">Select the hero image of the page:</label><label class="req_fields" title="Required Field">*</label><br>
-                      @if($img==null)
-                        <label>No image selected</label><br>
-                      @else
-                        <img src="{{$img}}" width="150"></img>
-                      @endif
-                      <input type="file" class="form-control-file img_input" id="about_img" name="about_img">
-                    </div>
-                    <button type="submit" class="btn btn-primary form_btn submit_btn">Submit Changes</button>
+                    <button type="submit" class="btn btn-primary form_btn submit_btn">Save</button>
                   </form>
                 </div>
             </div>

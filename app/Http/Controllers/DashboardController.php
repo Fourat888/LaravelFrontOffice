@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Site;
+use App\About;
 use App\Category;
+use App\Contact;
+use App\Post;
+use App\Setting;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +19,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $site_live = Site::all();
+        $posts = Post::all();
         $categories = Category::all();
-        return view('categories')->with('categories', $categories);
+        $contact = Contact::all();
+        $about = About::all();
+        $settings = Setting::all();
+        return view('dashboard')->with('site_live', $site_live)->with('posts', $posts)->with('categories', $categories)->with('contact', $contact)->with('about', $about)->with('settings', $settings);
     }
 
     /**
@@ -23,9 +33,20 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function go_live()
     {
-        return view('category_creation');
+        $site_live = Site::where('id', 1)->first();
+        $site_live->live = 1;
+        $site_live->save();
+        return redirect()->back();
+    }
+
+    public function go_down()
+    {
+        $site_live = Site::where('id', 1)->first();
+        $site_live->live = 0;
+        $site_live->save();
+        return redirect()->back();
     }
 
     /**
@@ -36,16 +57,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $cat = Category::where('name', $request->category_old_name)->first();
-        if($cat==null) {
-          $new_category = new Category;
-          $new_category->name = $request->category_name;
-          $new_category->save();
-        } else {
-          $cat->name = $request->category_name;
-          $cat->save();
-        }
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -56,7 +68,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -67,8 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::where('id', $id)->first();
-        return view('category_edit')->with('category', $category);
+        //
     }
 
     /**
@@ -91,8 +102,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-      $category = Category::where('id', $id)->first();
-      $category->delete();
-      return redirect()->back();
+        //
     }
 }

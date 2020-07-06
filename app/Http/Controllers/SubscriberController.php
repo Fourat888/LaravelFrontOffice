@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
-class CategoryController extends Controller
+class SubscriberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('categories')->with('categories', $categories);
+      $subscribers = Subscriber::all();
+      return view('subscribers')->with('subscribers', $subscribers);
     }
 
     /**
@@ -23,9 +25,13 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function export()
     {
-        return view('category_creation');
+        $subscribers = Subscriber::all();
+        $json_file = $subscribers->toJson();
+        Storage::disk('public')->put('subs.json', response()->json($subscribers));
+        $pathToFile = public_path().'/subs/subs.json';
+        return response()->download($pathToFile);
     }
 
     /**
@@ -36,16 +42,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $cat = Category::where('name', $request->category_old_name)->first();
-        if($cat==null) {
-          $new_category = new Category;
-          $new_category->name = $request->category_name;
-          $new_category->save();
-        } else {
-          $cat->name = $request->category_name;
-          $cat->save();
-        }
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -56,7 +53,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -67,8 +64,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::where('id', $id)->first();
-        return view('category_edit')->with('category', $category);
+        //
     }
 
     /**
@@ -91,8 +87,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-      $category = Category::where('id', $id)->first();
-      $category->delete();
+      $subscriber = Subscriber::where('id', $id)->first();
+      $subscriber->delete();
       return redirect()->back();
     }
 }

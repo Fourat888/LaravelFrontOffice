@@ -32,21 +32,21 @@ class AboutController extends Controller
 
         if($about==null) {
           $new_about = new About;
-          $new_about->content = $request->about_contect;
+          $new_about->content = nl2br($request->about_contect);
           $new_about->img = $request->about_img->move('images','about.jpg');
           $new_about->save();
         } else {
           if($request->about_img==null) {
-            $about->content = $request->about_contect;
+            $about->content = nl2br($request->about_contect);
             $about->save();
           } else {
-            $about->content = $request->about_contect;
+            $about->content = nl2br($request->about_contect);
             $about->img = $request->about_img->move('images','about.jpg');
             $about->save();
           }
         }
 
-        return view('dashboard');
+        return redirect()->route('about.index');
     }
 
     /**

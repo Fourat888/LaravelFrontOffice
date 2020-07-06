@@ -81,7 +81,7 @@ class ContactController extends Controller
         }
       }
 
-      return view('dashboard');
+      return redirect()->route('contact.index');
     }
 
     /**
