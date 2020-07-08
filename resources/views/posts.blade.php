@@ -32,7 +32,7 @@
                       <a href="{{route('posts.create')}}" class="btn btn-primary form_btn submit_btn">Create Post</a>
                     @endif
                   @else
-                  <table class="table table-striped">
+                  <table class="table table-striped table-responsive">
                     <thead>
                       <tr>
                         <th scope="col">Id</th>
@@ -44,7 +44,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($posts as $post)
+                      @foreach($posts->reverse() as $post)
                       <tr>
                         <th scope="row">{{$post->id}}</th>
                         <td>{{$post->name}}</td>
@@ -54,13 +54,13 @@
                           @endif
                         @endforeach
                         <td><img src="{{$post->img}}" width="100"></img></td>
-                        <td id="post_content">{{\Illuminate\Support\Str::limit($post->content,200)}}</td>
+                        <td id="post_content">{{\Illuminate\Support\Str::limit($post->content,100)}}</td>
                         <td>
                           <div>
-                            <a href="{{route('posts.edit',['id' => $post->id])}}" class="btn btn-success category_btn">Edit</a>
+                            <a href="{{route('posts.edit',['id' => $post->id])}}" class="btn btn-success btn-block category_btn">Edit</a>
                           </div>
                           <div id="destroy_div">
-                            <a href="{{route('posts.destroy',['id' => $post->id])}}" class="btn btn-danger category_btn" id="">Delete</a>
+                            <a href="{{route('posts.destroy',['id' => $post->id])}}" class="btn btn-danger btn-block category_btn" id="">Delete</a>
                           </div>
                         </td>
                       </tr>

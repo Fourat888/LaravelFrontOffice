@@ -22,7 +22,7 @@
   <hr class="front_hr_blog">
   <div class="row contact_row">
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-      @foreach($posts as $post)
+      @foreach($posts->reverse() as $post)
         <div class="row">
           <div class="col-12">
             <div class="card post_card">

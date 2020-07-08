@@ -17,9 +17,6 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->text('homepage_content');
             $table->string('homepage_img');
-            $table->string('hr_color');
-            $table->string('btn_color');
-            $table->string('btn_hover_color');
             $table->timestamps();
         });
     }

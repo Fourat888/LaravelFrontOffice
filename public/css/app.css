@@ -117,6 +117,9 @@ body {
   background-color: #ff3333!important;
   border-color: #ff3333!important;
 }
+.submit_btn:focus {
+  box-shadow: 0 0 0 0.2rem #ff3333!important;
+}
 .category_btn {
   color: #fff!important;
 }
@@ -224,6 +227,9 @@ body {
   color:#ff3333;
   text-decoration: none;
 }
+#forgot {
+  color:#ff3333;
+}
 #category_ul {
   list-style:square;
 }
@@ -285,7 +291,7 @@ ul#menu li {
   margin-bottom: 50px;
 }
 .latest_posts_img {
-  height: 200px!important;
+  height: 250px!important;
   -ms-flex-negative: none;
 }
 .back_card_header {
@@ -294,6 +300,8 @@ ul#menu li {
 }
 .back_side_menu {
   text-align: center;
+  width: 100%!important;
+  margin-bottom: 20px;
 }
 .list-group-item {
   background-color: #343a40!important;
@@ -352,11 +360,35 @@ ul#social_footer li {
   color: #222;
 }
 #live_btn {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 #subs_exp {
   margin-top: 20px;
 }
 #hr_color {
   padding: 18px;
+}
+.isDisabled {
+  pointer-events: none;
+}
+.cat_row {
+  margin-top: 30px;
+}
+.posts_2row {
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .latest_card {
+    margin-top: 20px;
+  }
+  .posts_2row {
+    margin-top: 0px;
+  }
+  .news_row {
+    margin-top: -40px;
+    margin-bottom: 40px;
+  }
+  .news_h4 {
+    margin-top: 0px;
+  }
 }

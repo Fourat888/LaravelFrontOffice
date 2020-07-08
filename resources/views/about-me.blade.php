@@ -25,7 +25,7 @@
       <!-- To side menu -->
       <div class="col-12">
         <h4 class="front_header">About</h4>
-        <hr class="front_hr_about" style="border-color:{{$hr_color}};">
+        <hr class="front_hr_about">
         <p class="front_p about_p">
           {!! $content !!}
         </p>

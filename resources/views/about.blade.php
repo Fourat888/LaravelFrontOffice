@@ -26,7 +26,7 @@
                   <form method="POST" action="{{ route('about.save') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <label for="about_contect" class="control_labels">Insert into the textarea below the contect of the "About" page:</label><label class="req_fields" title="Required Field">*</label>
+                      <label for="about_contect" class="control_labels">Insert into the textarea below the contect of the "About" page:<label class="req_fields" title="Required Field">*</label></label>
                       <textarea class="form-control" id="about_contect" name="about_contect" rows="6">{{$content}}</textarea>
                     </div>
                     <div class="form-group">

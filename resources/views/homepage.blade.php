@@ -24,8 +24,8 @@
     <div class="row justify-content-center">
       <!-- To side menu -->
       <div class="col-12">
-        <h4 class="front_header">Home</h4>
-        <hr class="front_hr_about" style="border-color:{{$hr_color}};">
+        <h4 class="front_header">Welcome</h4>
+        <hr class="front_hr_about">
         <p class="front_p about_p">
           {!! $settings->homepage_content !!}
         </p>
@@ -35,15 +35,15 @@
       <!-- To side menu -->
       <div class="col-12 home_posts">
         <h4 class="front_header">Latest Posts</h4>
-        <hr class="home_posts_hr" style="border-color:{{$hr_color}};">
+        <hr class="home_posts_hr">
         <div class="row posts_home">
           @if($posts->count()>=1)
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="card" >
+            <div class="card latest_card" >
               <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-1]->img}}" alt="Card image cap">
               <div class="card-body">
                 <h6>{{$posts[$posts->count()-1]->name}}</h6>
-                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-1]->content,100)}}</p>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-1]->content,200)}}</p>
                 <a href="{{route('posts.post',['id' => $posts[$posts->count()-1]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
               </div>
             </div>
@@ -51,11 +51,11 @@
           @endif
           @if($posts->count()>=2)
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="card" >
+            <div class="card latest_card">
               <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-2]->img}}" alt="Card image cap">
               <div class="card-body">
                 <h6>{{$posts[$posts->count()-2]->name}}</h6>
-                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-2]->content,100)}}</p>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-2]->content,200)}}</p>
                 <a href="{{route('posts.post',['id' => $posts[$posts->count()-2]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
               </div>
             </div>
@@ -63,22 +63,62 @@
           @endif
           @if($posts->count()>=3)
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <div class="card" >
+            <div class="card latest_card" >
               <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-3]->img}}" alt="Card image cap">
               <div class="card-body">
                 <h6>{{$posts[$posts->count()-3]->name}}</h6>
-                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-3]->content,100)}}</p>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-3]->content,200)}}</p>
                 <a href="{{route('posts.post',['id' => $posts[$posts->count()-3]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
               </div>
             </div>
           </div>
           @endif
         </div>
+        @if($posts->count()>=4)
+        <div class="row posts_2row">
+          @if($posts->count()>=4)
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card latest_card" >
+              <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-4]->img}}" alt="Card image cap">
+              <div class="card-body">
+                <h6>{{$posts[$posts->count()-4]->name}}</h6>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-4]->content,200)}}</p>
+                <a href="{{route('posts.post',['id' => $posts[$posts->count()-4]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
+              </div>
+            </div>
+          </div>
+          @endif
+          @if($posts->count()>=5)
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card latest_card">
+              <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-5]->img}}" alt="Card image cap">
+              <div class="card-body">
+                <h6>{{$posts[$posts->count()-5]->name}}</h6>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-5]->content,200)}}</p>
+                <a href="{{route('posts.post',['id' => $posts[$posts->count()-5]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
+              </div>
+            </div>
+          </div>
+          @endif
+          @if($posts->count()>=6)
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="card latest_card">
+              <img class="card-img-top latest_posts_img" src="{{$posts[$posts->count()-6]->img}}" alt="Card image cap">
+              <div class="card-body">
+                <h6>{{$posts[$posts->count()-6]->name}}</h6>
+                <p class="card-text">{{\Illuminate\Support\Str::limit($posts[$posts->count()-6]->content,200)}}</p>
+                <a href="{{route('posts.post',['id' => $posts[$posts->count()-6]->id])}}" class="btn btn-primary submit_btn btn-block post_btn">Read more</a>
+              </div>
+            </div>
+          </div>
+          @endif
+        </div>
+        @endif
       </div>
     </div>
-    <div class="row">
+    <div class="row news_row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 newsletter_img">
-        <img src="/images/newsletter.png" width="500"></img>
+        <img src="/images/newsletter.png" width="100%"></img>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 newsletter">
         <h4 class="front_header news_h4">Join the Blog Newsletter</h4>

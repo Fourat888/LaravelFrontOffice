@@ -29,8 +29,7 @@ class FrontController extends Controller
         $posts = Post::all();
         $settings = Setting::where('id', 1)->first();
         $site_live = Site::all();
-        $hr_color = Setting::where('id', 1)->first();
-        return view('homepage')->with('categories', $categories)->with('posts', $posts)->with('settings', $settings)->with('site_live', $site_live)->with('hr_color', $hr_color->hr_color);
+        return view('homepage')->with('categories', $categories)->with('posts', $posts)->with('settings', $settings)->with('site_live', $site_live);
     }
 
     public function blog()
@@ -58,14 +57,12 @@ class FrontController extends Controller
           $img = null;
           $content = null;
           $site_live = Site::all();
-          $hr_color = Setting::where('id', 1)->first();
-          return view('about-me')->with('img', $img)->with('content', $content)->with('site_live', $site_live)->with('hr_color', $hr_color->hr_color);
+          return view('about-me')->with('img', $img)->with('content', $content)->with('site_live', $site_live);
         } else {
           $img = $about->img;
           $content = $about->content;
           $site_live = Site::all();
-          $hr_color = Setting::where('id', 1)->first();
-          return view('about-me')->with('img', $img)->with('content', $content)->with('site_live', $site_live)->with('hr_color', $hr_color->hr_color);
+          return view('about-me')->with('img', $img)->with('content', $content)->with('site_live', $site_live);
         }
     }
 
