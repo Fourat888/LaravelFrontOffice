@@ -1,3 +1,3 @@
 create schema blog_project;
 use blog_project;
-select * from sites;
+select * from subscribers;

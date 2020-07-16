@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('front.homepage');
-});
-
 Route::get('/dashboard', [
     'uses' => 'DashboardController@index',
     'as' => 'dashboard.index'
@@ -32,7 +28,7 @@ Route::get('/dashboard/go-down', [
     'as' => 'dashboard.go_down'
 ])->middleware('auth');
 
-Route::get('/homepage', [
+Route::get('/', [
     'uses' => 'FrontController@homepage',
     'as' => 'front.homepage'
 ]);
@@ -55,6 +51,11 @@ Route::get('/blog', [
 Route::get('/category/{id}', [
     'uses' => 'FrontController@category',
     'as' => 'front.category'
+]);
+
+Route::get('/error/{error}', [
+    'uses' => 'FrontController@error',
+    'as' => 'front.error'
 ]);
 
 Route::get('/search', [
@@ -170,6 +171,10 @@ Route::get('/post/{id}', [
     'uses' => 'FrontController@post',
     'as' => 'posts.post'
 ])->middleware('auth');
+
+Route::get('sendbasicemail','MailController@basic_email');
+Route::get('sendhtmlemail','MailController@html_email');
+Route::get('sendattachmentemail','MailController@attachment_email');
 
 Auth::routes();
 

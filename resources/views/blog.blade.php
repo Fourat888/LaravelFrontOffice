@@ -62,7 +62,7 @@
         @csrf
         <div class="form-group">
           <button type="submit" id="search_btn"><i class="fa fa-search search_icon" aria-hidden="true"></i></button>
-          <input type="text" class="" id="blog_search" name="blog_search" placeholder="Search">
+          <input type="text" class="" id="blog_search" name="blog_search" placeholder="Search" required>
         </div>
       </form>
     </div>

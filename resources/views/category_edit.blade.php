@@ -27,7 +27,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="category_name" class="control_labels">Category Name</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="category_name" name="category_name" value="{{$category->name}}">
+                      <input type="text" class="form-control" id="category_name" name="category_name" value="{{$category->name}}" required>
                       <input type="hidden" name="category_old_name" value="{{$category->name}}">
                     </div>
                     <button type="submit" class="btn btn-primary form_btn submit_btn">Save</button>

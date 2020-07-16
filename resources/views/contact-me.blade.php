@@ -47,20 +47,20 @@
           <form id="contact_form">
             <div class="form-group">
               <label for="exampleInputName">Full Name</label>
-              <input type="text" class="form-control" id="name_input">
+              <input type="text" class="form-control" id="name_input" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPhone">Phone Number</label>
-              <input type="text" class="form-control" id="phone_input">
+              <input type="text" class="form-control" id="phone_input" required>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="email_input" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="email_input" aria-describedby="emailHelp" required>
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputText">Message</label>
-              <textarea class="form-control" id="message_input" rows="5"></textarea>
+              <textarea class="form-control" id="message_input" rows="5" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary submit_btn" id="submit_button_form">Submit</button>
           </form>

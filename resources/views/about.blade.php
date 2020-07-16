@@ -27,10 +27,10 @@
                     @csrf
                     <div class="form-group">
                       <label for="about_contect" class="control_labels">Insert into the textarea below the contect of the "About" page:<label class="req_fields" title="Required Field">*</label></label>
-                      <textarea class="form-control" id="about_contect" name="about_contect" rows="6">{{$content}}</textarea>
+                      <textarea class="form-control" id="about_contect" name="about_contect" rows="6" required>{!! $content !!}</textarea>
                     </div>
                     <div class="form-group">
-                      <label for="about_img" class="control_labels">Select the hero image of the page:</label><label class="req_fields" title="Required Field">*</label><br>
+                      <label for="about_img" class="control_labels">Select the hero image of the page:</label><br>
                       @if($img==null)
                         <label>No image selected</label><br>
                       @else

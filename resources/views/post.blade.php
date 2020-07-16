@@ -14,7 +14,8 @@
               <img class="card-img-top" src="\{{$img}}" alt="Card image cap">
               <div class="card-header post_card_header">{{$post->name}}</div>
               <div class="card-body">
-                <p>
+                <a href="{{route('front.category',['id' => $post_category->id])}}" id="cat_label">{{$post_category->name}}</a><br>
+                <p id="post_cont">
                   {!! $post->content !!}
                 </p>
               </div>
@@ -45,7 +46,7 @@
         @csrf
         <div class="form-group">
           <button type="submit" id="search_btn"><i class="fa fa-search search_icon" aria-hidden="true"></i></button>
-          <input type="text" class="" id="blog_search" name="blog_search" placeholder="Search">
+          <input type="text" class="" id="blog_search" name="blog_search" placeholder="Search" required>
         </div>
       </form>
     </div>

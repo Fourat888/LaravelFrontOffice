@@ -27,10 +27,10 @@
                     @csrf
                     <div class="form-group">
                       <label for="settings_contect" class="control_labels">Insert into the textarea below the contect of the "Home" page:<label class="req_fields" title="Required Field">*</label></label>
-                      <textarea class="form-control" id="settings_contect" name="settings_contect" rows="6">{{$homepage_content}}</textarea>
+                      <textarea class="form-control" id="settings_contect" name="settings_contect" rows="6" required>{{$homepage_content}}</textarea>
                     </div>
                     <div class="form-group">
-                      <label for="settings_img" class="control_labels">Select the hero image of the homepage:<label class="req_fields" title="Required Field">*</label></label><br>
+                      <label for="settings_img" class="control_labels">Select the hero image of the homepage:</label><br>
                       @if($homepage_img==null)
                         <label>No image selected</label><br>
                       @else

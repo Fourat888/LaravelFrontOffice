@@ -377,6 +377,14 @@ ul#social_footer li {
 .posts_2row {
   margin-top: 20px;
 }
+#cat_label {
+  color: #ff3333;
+  font-size: 16px;
+  font-weight: bold;
+}
+#post_cont {
+  margin-top: 10px;
+}
 @media screen and (max-width: 767px) {
   .latest_card {
     margin-top: 20px;

@@ -27,7 +27,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="category_name" class="control_labels">Category Name</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="category_name" name="category_name">
+                      <input type="text" class="form-control" id="category_name" name="category_name" required>
                     </div>
                     <button type="submit" class="btn btn-primary form_btn submit_btn">Save</button>
                   </form>

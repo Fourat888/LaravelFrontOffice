@@ -126,10 +126,10 @@
         <form method="POST" action="{{ route('front.subscribe') }}">
           @csrf
           <div class="form-group col-md-6" id="newsletter_div">
-            <input type="text" class="form-control" id="newsletter_name" name="newsletter_name" placeholder="Your name">
+            <input type="text" class="form-control" id="newsletter_name" name="newsletter_name" placeholder="Your name" required>
           </div>
           <div class="form-group col-md-6" id="newsletter_div">
-            <input type="email" class="form-control" id="newsletter_email" name="newsletter_email" placeholder="Your email address">
+            <input type="email" class="form-control" id="newsletter_email" name="newsletter_email" placeholder="Your email address" required>
           </div>
           <button type="submit" class="btn btn-primary btn-block submit_btn">Subscribe</button>
         </form>

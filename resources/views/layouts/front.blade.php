@@ -89,6 +89,7 @@
               <li id="fb_li"><a href="#"><i class="fa fa-facebook footer_fa" aria-hidden="true"></i></a></li>
               <li id="tw_li"><a href="#"><i class="fa fa-instagram footer_fa" aria-hidden="true"></i></a></li>
               <li id="ig_li"><a href="#"><i class="fa fa-twitter footer_fa" aria-hidden="true"></i></a></li>
+              <li id="tw_li"><a href="#"><i class="fa fa-youtube footer_fa" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>

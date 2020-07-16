@@ -18,9 +18,9 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function error($error)
     {
-        //
+        return view('error')->with('error', $error);
     }
 
     public function homepage()
@@ -45,9 +45,10 @@ class FrontController extends Controller
     {
         $categories = Category::all();
         $post = Post::where('id', $id)->first();
+        $post_category = Category::where('id', $post->category_id)->first();
         $img = $post->img;
         $all_posts = Post::all();
-        return view('post')->with('categories', $categories)->with('post', $post)->with('img', $img)->with('all_posts', $all_posts);
+        return view('post')->with('categories', $categories)->with('post', $post)->with('img', $img)->with('all_posts', $all_posts)->with('post_category', $post_category);
     }
 
     public function about()
@@ -98,11 +99,15 @@ class FrontController extends Controller
 
     public function subscribe(Request $request)
     {
-      $sub = new Subscriber;
-      $sub->name = $request->newsletter_name;
-      $sub->email = $request->newsletter_email;
-      $sub->save();
-      return view('subscribed');
+      if($request->newsletter_name==null || $request->newsletter_email==null) {
+        return redirect()->route('front.error',['error' => "You must fill your Name and Email Address in order to subscribe."]);
+      } else {
+        $sub = new Subscriber;
+        $sub->name = $request->newsletter_name;
+        $sub->email = $request->newsletter_email;
+        $sub->save();
+        return view('subscribed');
+      }
     }
 
     public function category($id)

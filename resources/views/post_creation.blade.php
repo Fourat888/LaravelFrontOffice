@@ -27,11 +27,11 @@
                     @csrf
                     <div class="form-group">
                       <label for="post_name" class="control_labels">Post Name</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="post_name" name="post_name">
+                      <input type="text" class="form-control" id="post_name" name="post_name" required>
                     </div>
                     <div class="form-group">
                       <label for="post_category" class="control_labels">Post Category</label><label class="req_fields" title="Required Field">*</label>
-                      <select class="form-control" id="post_category" name="post_category">
+                      <select class="form-control" id="post_category" name="post_category" required>
                         @foreach($categories as $category)
                           <option>{{$category->name}}</option>
                         @endforeach
@@ -39,11 +39,11 @@
                     </div>
                     <div class="form-group">
                       <label for="post_contect" class="control_labels">Post Content</label><label class="req_fields" title="Required Field">*</label>
-                      <textarea class="form-control" id="post_contect" name="post_contect" rows="6"></textarea>
+                      <textarea class="form-control" id="post_contect" name="post_contect" rows="6" required></textarea>
                     </div>
                     <div class="form-group">
                       <label for="post_img" class="control_labels">Post Image</label><label class="req_fields" title="Required Field">*</label><br>
-                      <input type="file" class="form-control-file img_input" id="post_img" name="post_img">
+                      <input type="file" class="form-control-file img_input" id="post_img" name="post_img" required>
                     </div>
                     <button type="submit" class="btn btn-primary form_btn submit_btn">Save</button>
                   </form>

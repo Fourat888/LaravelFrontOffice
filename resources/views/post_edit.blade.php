@@ -27,12 +27,12 @@
                     @csrf
                     <div class="form-group">
                       <label for="category_name" class="control_labels">Post Name</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="category_name" name="category_name" value="{{$post->name}}">
+                      <input type="text" class="form-control" id="category_name" name="category_name" value="{{$post->name}}" required>
                       <input type="hidden" name="post_old_name" value="{{$post->name}}">
                     </div>
                     <div class="form-group">
                       <label for="post_category" class="control_labels">Post Category</label><label class="req_fields" title="Required Field">*</label>
-                      <select class="form-control" id="post_category" name="post_category">
+                      <select class="form-control" id="post_category" name="post_category" required>
                         @foreach($categories as $category)
                           @if($category->id == $post->category_id)
                             <option selected="selected">{{$category->name}}</option>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                       <label for="post_contect" class="control_labels">Post Content</label><label class="req_fields" title="Required Field">*</label>
-                      <textarea class="form-control" id="post_contect" name="post_contect" rows="6">{{$post->content}}</textarea>
+                      <textarea class="form-control" id="post_contect" name="post_contect" rows="6" required>{{$post->content}}</textarea>
                     </div>
                     <div class="form-group">
                       <label for="post_img" class="control_labels">Post Image</label><label class="req_fields" title="Required Field">*</label><br>

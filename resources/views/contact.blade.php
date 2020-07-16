@@ -29,40 +29,40 @@
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="contact_address">Address</label><label class="req_fields" title="Required Field">*</label>
-                        <input type="text" class="form-control" id="contact_address" name="contact_address" value="{{$address}}">
+                        <input type="text" class="form-control" id="contact_address" name="contact_address" value="{{$address}}" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="contact_country">Country</label><label class="req_fields" title="Required Field">*</label>
-                        <input type="text" class="form-control" id="contact_country" name="contact_country" value="{{$country}}">
+                        <input type="text" class="form-control" id="contact_country" name="contact_country" value="{{$country}}" required>
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="contact_email">Email Address</label><label class="req_fields" title="Required Field">*</label>
-                        <input type="email" class="form-control" id="contact_email" name="contact_email" value="{{$email}}">
+                        <input type="email" class="form-control" id="contact_email" name="contact_email" value="{{$email}}" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="contact_phone">Phone Number</label><label class="req_fields" title="Required Field">*</label>
-                        <input type="text" class="form-control" id="contact_phone" name="contact_phone" value="{{$phone}}">
+                        <input type="text" class="form-control" id="contact_phone" name="contact_phone" value="{{$phone}}" required>
                       </div>
                     </div>
                     <hr>
                     <label class="control_labels">Fill in your social media links:</label>
                     <div class="form-group">
                       <label for="contact_facebook">Facebook</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="contact_facebook" name="contact_facebook" value="{{$facebook}}">
+                      <input type="text" class="form-control" id="contact_facebook" name="contact_facebook" value="{{$facebook}}" required>
                     </div>
                     <div class="form-group">
                       <label for="contact_instagram">Instagram</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="contact_instagram" name="contact_instagram" value="{{$instagram}}">
+                      <input type="text" class="form-control" id="contact_instagram" name="contact_instagram" value="{{$instagram}}" required>
                     </div>
                     <div class="form-group">
                       <label for="contact_twitter">Twitter</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="contact_twitter" name="contact_twitter" value="{{$twitter}}">
+                      <input type="text" class="form-control" id="contact_twitter" name="contact_twitter" value="{{$twitter}}" required>
                     </div>
                     <div class="form-group">
                       <label for="contact_youtube">Youtube</label><label class="req_fields" title="Required Field">*</label>
-                      <input type="text" class="form-control" id="contact_youtube" name="contact_youtube" value="{{$youtube}}">
+                      <input type="text" class="form-control" id="contact_youtube" name="contact_youtube" value="{{$youtube}}" required>
                     </div>
                     <hr>
                     <div class="form-group">
