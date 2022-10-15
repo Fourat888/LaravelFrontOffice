@@ -6,6 +6,7 @@ use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
     /**
@@ -30,7 +31,6 @@ class PostController extends Controller
         $categories = Category::all();
         return view('post_creation')->with('categories', $categories);
     }
-
     /**
      * Store a newly created resource in storage.
      *
